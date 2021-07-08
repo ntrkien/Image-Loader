@@ -47,12 +47,13 @@ namespace WindowsFormsApp2
 
        
 
-        private void dtgView_DoubleClick_1(object sender, EventArgs e)
+        public void dtgView_DoubleClick_1(object sender, EventArgs e)
         {
 
             Form3 form3 = new Form3();
             String imgName = dtgView.CurrentRow.Cells[0].Value.ToString();
             form3.pictureBox1.ImageLocation = locale + @"\"+ imgName;
+            form3.pictureBox1.Load();
             form3.ShowDialog();
         }
     }

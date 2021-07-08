@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -29,16 +30,26 @@ namespace WindowsFormsApp2
 
             if (f.SelectedPath != "")
             {
+                
+                imgFiles = Directory.GetFiles(f.SelectedPath, "*.jpg");
+                showingImage(sender);
                 imgFiles = Directory.GetFiles(f.SelectedPath, "*.png");
                 showingImage(sender);
+                imgFiles = Directory.GetFiles(f.SelectedPath, "*.jpeg");
+                showingImage(sender);
+
+
+
+
             }
 
 
         }
 
+        public int i = 0, j = 0;
+
         public void showingImage(object sender)
         {
-            int i = 0, j = 0;
             PictureBox p;
             Button t;
 
